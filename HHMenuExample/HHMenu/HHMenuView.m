@@ -207,6 +207,12 @@ static HHMenuView *currentMenuView;
         preImageView.image = obj.preImage;
         [button addSubview:preImageView];
         
+        if (idx > 0) {
+            UIImageView *lineImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, kContentWidth - 23, 1)];
+            lineImage.backgroundColor = [UIColor whiteColor];
+            [button addSubview:lineImage];
+        }
+        
     }];
     
     contentView.frame = CGRectMake(10, 10, kContentWidth,itemHeight * _menuItmes.count + 15);
