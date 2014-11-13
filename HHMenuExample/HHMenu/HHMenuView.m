@@ -3,7 +3,7 @@
 //  HHMenuExample
 //
 //  Created by DEMAI on 14-11-12.
-//  Copyright (c) 2014年 eric. All rights reserved.
+//  Copyright (c) 2014年 Today. All rights reserved.
 //
 
 #import "HHMenuView.h"
