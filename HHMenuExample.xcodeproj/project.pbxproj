@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072C56BF1A146E3B00A0C5C4 /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 072C56BD1A146E3B00A0C5C4 /* face.png */; };
+		072C56C01A146E3B00A0C5C4 /* scan.png in Resources */ = {isa = PBXBuildFile; fileRef = 072C56BE1A146E3B00A0C5C4 /* scan.png */; };
 		07605B171A14526F003911E0 /* HHMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07605B141A14526F003911E0 /* HHMenuItem.m */; };
 		07605B181A14526F003911E0 /* HHMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07605B161A14526F003911E0 /* HHMenuView.m */; };
 		076C99601A13374700AF808F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C995F1A13374700AF808F /* main.m */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072C56BD1A146E3B00A0C5C4 /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
+		072C56BE1A146E3B00A0C5C4 /* scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan.png; sourceTree = "<group>"; };
 		07605B131A14526F003911E0 /* HHMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHMenuItem.h; sourceTree = "<group>"; };
 		07605B141A14526F003911E0 /* HHMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHMenuItem.m; sourceTree = "<group>"; };
 		07605B151A14526F003911E0 /* HHMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHMenuView.h; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 		076C995D1A13374700AF808F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				072C56BD1A146E3B00A0C5C4 /* face.png */,
+				072C56BE1A146E3B00A0C5C4 /* scan.png */,
 				07F4BB551A1377BA0030D93B /* home_icon.png */,
 				07F4BB561A1377BA0030D93B /* home_icon@2x.png */,
 				07F4BB571A1377BA0030D93B /* search_icon.png */,
@@ -232,6 +238,8 @@
 			files = (
 				07F4BB5B1A1377BA0030D93B /* search_icon.png in Resources */,
 				076C99691A13374700AF808F /* Main.storyboard in Resources */,
+				072C56C01A146E3B00A0C5C4 /* scan.png in Resources */,
+				072C56BF1A146E3B00A0C5C4 /* face.png in Resources */,
 				07F4BB591A1377BA0030D93B /* home_icon.png in Resources */,
 				07F4BB5C1A1377BA0030D93B /* search_icon@2x.png in Resources */,
 				076C996E1A13374700AF808F /* LaunchScreen.xib in Resources */,
@@ -380,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = HHMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -390,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = HHMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

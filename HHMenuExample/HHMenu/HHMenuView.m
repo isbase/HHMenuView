@@ -42,7 +42,8 @@
 
 
 const CGFloat kArrowSize = 12.f;
-const CGFloat kContentWidth = 110.0f;
+const CGFloat kContentWidth = 109.0f;
+const CGFloat itemHeight = 37.5f;
 static HHMenuView *currentMenuView;
 @implementation HHMenuView{
     UIView      *_contentView;
@@ -82,7 +83,7 @@ static HHMenuView *currentMenuView;
         self.opaque = NO;
         self.layer.shadowOpacity = 0.5;
         self.layer.shadowOffset = CGSizeMake(2, 2);
-        self.layer.shadowRadius = 2;
+        self.layer.shadowRadius = 1;
     }
     
     return self;
@@ -185,35 +186,35 @@ static HHMenuView *currentMenuView;
 
 }
 
-- (UIView *) createContentView
+- (UIView *)createContentView
 {
     for (UIView *v in self.subviews) {
         [v removeFromSuperview];
     }
-    const CGFloat itemHeight = 30.0f;
+    
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, kContentWidth, 10)];
     contentView.backgroundColor = [UIColor clearColor];
     [_menuItmes enumerateObjectsUsingBlock:^(HHMenuItem  *obj, NSUInteger idx, BOOL *stop) {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 5 + idx * itemHeight, kContentWidth, itemHeight)];
         [button setTitle:obj.title forState:UIControlStateNormal];
         button.tag = idx;
-        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 27, 0, 0)];
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+        [button setTitleColor:[UIColor colorWithRed:208.0/255.0 green:208.0/255.0 blue:208.0/255.0 alpha:1] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:12];
         [button addTarget:self action:@selector(onItemClick:) forControlEvents:UIControlEventTouchUpInside];
         [contentView addSubview:button];
-        
-        UIImageView *preImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 5, 20, 20)];
+        UIImageView *preImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (itemHeight - 25) / 2, 25, 25)];
         preImageView.image = obj.preImage;
         [button addSubview:preImageView];
-        
-        if (idx > 0) {
-            UIImageView *lineImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, kContentWidth - 23, 1)];
-            lineImage.backgroundColor = [UIColor whiteColor];
-            [button addSubview:lineImage];
-        }
-        
     }];
+    
+    for (int i = 1; i < _menuItmes.count; i++) {
+        UIImageView *lineImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, i * itemHeight + 5, kContentWidth - 20, 1)];
+        lineImage.backgroundColor = [UIColor colorWithRed:208.0/255.0 green:208.0/255.0 blue:208.0/255.0 alpha:1];
+        [contentView addSubview:lineImage];
+    }
     
     contentView.frame = CGRectMake(10, 10, kContentWidth,itemHeight * _menuItmes.count + 15);
     return contentView;
