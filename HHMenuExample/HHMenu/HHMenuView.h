@@ -38,7 +38,7 @@
 
 @interface HHMenuView : UIView
 
-@property(nonatomic,weak)id<HHMenuViewDelegate> delegate;
+@property(nonatomic,assign)id<HHMenuViewDelegate> delegate;
 - (void)dismisMenuView;     //not't care this
 
 
